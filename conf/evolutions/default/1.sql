@@ -3,13 +3,15 @@
 
 # --- !Ups
 
-create table user (
-  id                        varchar(255) not null,
+create table users (
+  id                        bigint not null,
   name                      varchar(255),
-  constraint pk_user primary key (id))
+  username                  varchar(255),
+  password_hash             varchar(255),
+  constraint pk_users primary key (id))
 ;
 
-create sequence user_seq;
+create sequence users_seq;
 
 
 
@@ -18,9 +20,9 @@ create sequence user_seq;
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists user;
+drop table if exists users;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists user_seq;
+drop sequence if exists users_seq;
 
