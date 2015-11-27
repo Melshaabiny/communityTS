@@ -8,7 +8,8 @@ GET     /                           controllers.Application.index()
 # Mapping of routes using separate UserAuth controller to manage the Action methods of
 # my application's blogging feature.
 GET     /login                      controllers.UserAuth.index()
-#POST    /user                       controllers.Application.addUser()
+POST    /login                      controllers.UserAuth.login()
+POST    /signup                     controllers.UserAuth.signup()
 
 
 # Map static resources from the /public folder to the /assets URL path
