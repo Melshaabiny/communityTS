@@ -4,11 +4,11 @@
 # --- !Ups
 
 create table users (
-  id                        bigint not null,
+  username                  varchar(255) not null,
+  id                        varchar(255),
   name                      varchar(255),
-  username                  varchar(255),
   password_hash             varchar(255),
-  constraint pk_users primary key (id))
+  constraint pk_users primary key (username))
 ;
 
 create sequence users_seq;
