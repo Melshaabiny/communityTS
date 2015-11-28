@@ -2,8 +2,10 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Application.index()
+# Home page (guest)
+GET     /                           controllers.Application.indexUnAuth()
+# Home page (registered)
+GET     /registered                 controllers.Application.index()
 
 # Mapping of routes using separate UserAuth controller to manage the Action methods of
 # my application's users features.
