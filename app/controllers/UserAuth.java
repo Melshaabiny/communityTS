@@ -19,6 +19,7 @@ public class UserAuth extends Controller {
         return ok(views.html.userauth.index.render());
     }
 
+    @Security.Authenticated(SecAuth.class)
     public Result profile(String usrname){
         User user = User.find.where().eq("username", usrname).findUnique();
         return ok(views.html.userauth.profile.render(user));
@@ -34,14 +35,15 @@ public class UserAuth extends Controller {
         User user = User.find.where().eq("username", username).findUnique();
 
         if (user != null && user.authenticate(password)) {
-            session("user_id", user.id.toString());
+            session().clear();
+            session("user_name", user.username);
             flash("success", "Welcome back " + user.username);
         }
         else {
             flash("error", "Invalid login. Check your username and password.");
         }
 
-        return redirect(routes.Application.index());
+        return redirect(routes.UserAuth.profile(user.username));
     }
 
     public Result signup() {
@@ -61,8 +63,9 @@ public class UserAuth extends Controller {
 
         user.save();
 
-//        flash("success", "Welcome new user " + user.username);
-//        session("user_id", user.id.toString());
+        flash("success", "Welcome new user " + user.username);
+        session().clear();
+        session("user_name", user.username);
         return redirect(routes.Application.index());
     }
 }
