@@ -17,18 +17,20 @@ import javax.validation.Constraint;
 public class User extends Model {
     @Id
     public Long id;
+
     public String name;
     public String username;
     public String password_hash;
 
     // Finder object for easier quering
-    public static Finder<Integer, User> find = new Finder(Integer.class, User.class);
+    public static Finder<Long, User> find = new Finder(Long.class, User.class);
 
     // NOT FOR PRODUCTION - must ensure this is a valid user first. I have not done that.
     public boolean authenticate(String password){
         return BCrypt.checkpw(password, this.password_hash);
     }
-    public static User createUser(String username, String password){
+
+    public static User createUser(String name, String username, String password){
 
         // requirements for username and password
         if(password==null || username==null || password.length()<8){
@@ -40,6 +42,7 @@ public class User extends Model {
         // create a new user instance in the database
         // assign the username and passwordHash to the newly created user
         User user = new User();
+        user.name = name;
         user.username = username;
         user.password_hash = passwordHash;
 
