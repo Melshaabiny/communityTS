@@ -1,0 +1,43 @@
+@(title: String)(content: Html)
+
+
+@*
+* This is a server side comment on the template.
+*
+* Documentation for templates begin here:
+* https://www.playframework.com/documentation/2.4.x/JavaTemplates
+*
+* The top template line defines any parameters and blocks that the template
+* requires. This template takes a parameter 'title' and a block 'content'.
+*
+* We treat each template as a function. This template function is
+* @blog.main(){} because it is a file called main.scala.html and it is located
+* inside of the app/views/tool/ directory.
+*@
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap/carousel.css">
+<!DOCTYPE html>
+
+<html lang="en">
+<div style='margin-left: 10px;'>
+
+<head>
+    <title>@title</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>My Tools</h1>
+
+    <a href="@routes.Tool.index()">Index page</a>
+&emsp;
+    <a href="@routes.Tool.form()">Add a new Tool</a>
+
+
+@content
+</body>
+    </div>
+</html>

@@ -1,0 +1,14 @@
+@(gadgets: List[Gadget])
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap/carousel.css">
+@tool.main("Welcome to My Tools") {
+<h2>Current Tools</h2>
+
+<ul>
+    <!--<li>Hi</li>-->
+    @for(gadget <- gadgets) {
+    <li><a href="@(routes.Tool.show(gadget.id))">@gadget.title</a></li>
+    }
+</ul>
+
+}
