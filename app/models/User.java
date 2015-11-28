@@ -15,15 +15,15 @@ import javax.validation.Constraint;
 @Table(name="users")
 @Entity
 public class User extends Model {
-    @Id
-    public Long id;
+    public String id;
 
     public String name;
+    @Id
     public String username;
     public String password_hash;
 
     // Finder object for easier quering
-    public static Finder<Long, User> find = new Finder(Long.class, User.class);
+    public static Finder<String, User> find = new Finder(String.class, User.class);
 
     // NOT FOR PRODUCTION - must ensure this is a valid user first. I have not done that.
     public boolean authenticate(String password){
