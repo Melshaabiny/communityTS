@@ -1,6 +1,5 @@
 package controllers;
 
-import javafx.beans.property.ReadOnlyStringProperty;
 import models.User;
 import play.*;
 import play.data.DynamicForm;
