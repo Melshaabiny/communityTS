@@ -25,6 +25,8 @@ create sequence gadget_seq;
 create sequence users_seq;
 
 
+
+
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;
@@ -38,6 +40,4 @@ SET REFERENTIAL_INTEGRITY TRUE;
 drop sequence if exists gadget_seq;
 
 drop sequence if exists users_seq;
-
-drop table if exists users cascade;
 
