@@ -11,10 +11,6 @@ create table users (
   constraint pk_users primary key (username))
 ;
 
-create sequence users_seq;
-
-
-
 
 # --- !Downs
 
@@ -25,4 +21,6 @@ drop table if exists users;
 SET REFERENTIAL_INTEGRITY TRUE;
 
 drop sequence if exists users_seq;
+
+drop table if exists users cascade;
 
