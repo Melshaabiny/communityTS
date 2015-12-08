@@ -1,14 +1,64 @@
-@(gadgets: List[Gadget])
+
+
+@(gadgets: List[Gadget], tooltypes: List[ToolType])
+
 <link rel="stylesheet" href="/assets/stylesheets/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/stylesheets/bootstrap/carousel.css">
-@tool.main("Welcome to My Tools") {
-<h2>Current Tools</h2>
 
+@main{
+@userauth.navbar()
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2>CURRENT TOOLS</h2>
+
+
+
+@if(gadgets.isEmpty()) {
+<h3>No gadgets available in this tooltype category</h3>
+} else {
+<h3>Tool List</h3>
 <ul>
-    <!--<li>Hi</li>-->
-    @for(gadget <- gadgets) {
-    <li><a href="@(routes.Tool.show(gadget.id))">@gadget.title</a></li>
+    @for(g <- gadgets) {
+    <li>@g.title</li>
     }
+
 </ul>
+}
+
+<div style='margin-left: 10px;'>
+    <a href="@routes.Tool.index()">Index page</a>
+
+    <h3>Add a new tool below</h3>
+
+    <form action="@routes.Tool.create()" method="post">
+        <label for="title">Name</label> <br>
+        <input type="text" name="title" />
+        <br><br>
+
+        <label for="tooltype_id">Category</label> <br>
+        <select name = "tooltype_id" id = "tooltype">
+            @for( t <- tooltypes) {
+            <option value = "@t.id" > @t.name</option>
+            }
+        </select>
+
+        <br>
+        <br>
+        <label for="body">Description</label> <br>
+        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        <br>
+        <button>CREATE!</button>
+        <br>
+
+
+    </form>
+</div>
+
 
 }

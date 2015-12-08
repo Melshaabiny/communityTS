@@ -1,0 +1,18 @@
+@(tooltype: ToolType, gadgets: List[Gadget])
+
+@main{
+@userauth.navbar()
+<h1>ToolType: @tooltype.name</h1>
+
+@if(gadgets.isEmpty()) {
+<h2>No gadgets available in this tooltype category</h2>
+} else {
+<h2>Tool List for ToolType Category: @tooltype.name</h2>
+<ul>
+    @for(g <- gadgets) {
+    <li>@g.title</li>
+                        }
+
+</ul>
+        }
+    }

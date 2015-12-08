@@ -1,12 +1,12 @@
 package controllers;
 
 import models.User;
-import play.*;
 import play.data.DynamicForm;
-import play.data.Form;
+import play.mvc.Controller;
+import play.mvc.Result;
+import play.mvc.Security;
+
 import static play.data.Form.form;
-import play.mvc.*;
-import views.html.*;
 
 /**
  * Created by MoustafaElshaabiny

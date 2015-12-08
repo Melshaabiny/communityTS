@@ -21,6 +21,11 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 #tools
 GET     /tools                      controllers.Tool.index()
-GET     /tools/new                  controllers.Tool.form()
+#GET     /tools/new                  controllers.Tool.form()
 POST    /tools                      controllers.Tool.create()
-GET     /tools/:id                  controllers.Tool.show(id: Long)
+#GET     /tools/:id                  controllers.Tool.show(id: Long)
+
+
+GET     /tooltypes                  controllers.ToolTypes.index()
+POST    /tooltypes                  controllers.ToolTypes.create()
+GET     /tooltypes/:id              controllers.ToolTypes.show(id:Long)

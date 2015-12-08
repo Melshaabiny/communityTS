@@ -1,0 +1,30 @@
+@(tooltypes: List[ToolType])
+@main{
+@userauth.navbar()
+<div style='margin-left: 10px;'>
+
+<form action="@routes.ToolTypes.create()" method="post">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <input type="text" name="name">
+    <button>Submit</button>
+</form>
+    </div>
+
+@if(tooltypes.isEmpty()) {
+<h2>No tooltypes available</h2>
+} else {
+<h2>ToolType List</h2>
+<ul>
+    @for(t <- tooltypes) {
+    <li>@t.name</li>
+    }
+</ul>
+}
+}
