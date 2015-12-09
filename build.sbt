@@ -14,7 +14,6 @@ libraryDependencies ++= Seq(
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.webjars" % "bootstrap" % "3.3.5",
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
-
 )
 // FOR PRODUCTION, ENSURE YOU ARE USING LATEST VERSION OF BCRYPT LIB
 
