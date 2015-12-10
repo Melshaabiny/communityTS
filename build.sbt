@@ -10,7 +10,6 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
-  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
   "org.mindrot" % "jbcrypt" % "0.3m",
   "org.webjars" % "bootstrap" % "3.3.5",
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
