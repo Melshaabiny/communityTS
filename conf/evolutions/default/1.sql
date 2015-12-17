@@ -27,7 +27,7 @@ create table users (
   constraint pk_users primary key (username))
 ;
 
-alter table gadget add constraint fk_gadget_tooltype_1 foreign key (tooltype_id) references tool_type (id);
+alter table gadget add constraint 1k_gadget_tooltype_1 foreign key (tooltype_id) references tool_type (id);
 create index ix_gadget_tooltype_1 on gadget (tooltype_id);
 
 
