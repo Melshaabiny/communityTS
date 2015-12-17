@@ -3,6 +3,7 @@ name := """communityTS"""
 version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava,PlayEbean)
+PlayKeys.fileWatchService:=play.runsupport.FileWatchService.sbt(2000)
 
 scalaVersion := "2.11.6"
 
