@@ -17,6 +17,7 @@ public class Gadget extends Model {
 
     public String body;
     public Long rating;
+    public Long comment;
     public String category;
 
     @ManyToOne

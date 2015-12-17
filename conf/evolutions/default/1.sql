@@ -8,6 +8,7 @@ create table gadget (
   title                     varchar(255),
   body                      varchar(255),
   rating                    bigint,
+  comment                   bigint,
   category                  varchar(255),
   tooltype_id               bigint,
   constraint pk_gadget primary key (id))
