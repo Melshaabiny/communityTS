@@ -1,8 +1,20 @@
 @(gadget: Gadget)
+@main{
+@userauth.navbar()
+<div style='margin-left: 10px;'>
 
-Title: <p><font size ="10" strong>@gadget.title</font></p>
+<font  size = "5">
+<body background='@routes.Assets.versioned("images/gears.png")'>
+
 <br>
 <br>
+<br>
 
-Description: <br>
+Title: <strong font size = >@gadget.title</strong>
+<br>
+
+Description:
 <p>@gadget.body</p>
+        </font>
+    </div>
+}

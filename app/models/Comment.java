@@ -16,7 +16,7 @@ public class Comment extends Model {
         //public String title;
 
         public String body;
-        public Long comment;
+        public Long comments;
 
        // @ManyToOne
         //public ToolType tooltype;

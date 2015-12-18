@@ -1,11 +1,12 @@
 # --- Created by Ebean DDL
+# To stop Ebean DDL generation, remove this comment and start using Evolutions
 
 # --- !Ups
 
 create table comment (
   id                        bigserial not null,
   body                      varchar(255),
-  comment                   bigint,
+  comments                  bigint,
   constraint pk_comment primary key (id))
 ;
 
@@ -13,7 +14,6 @@ create table gadget (
   id                        bigserial not null,
   title                     varchar(255),
   body                      varchar(255),
-  rating                    bigint,
   tooltype_id               bigint,
   constraint pk_gadget primary key (id))
 ;

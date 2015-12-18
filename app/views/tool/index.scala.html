@@ -12,22 +12,15 @@
 <br>
 <br>
 <br>
-
-<h2>CURRENT TOOLS</h2>
-
+<body background='@routes.Assets.versioned("images/gears.png")'>
 
 
-@if(gadgets.isEmpty()) {
-<h3>No gadgets available in this tooltype category</h3>
-} else {
-<h3>Tool List</h3>
-<ul>
-    @for(g <- gadgets) {
-    <li><a href="@(routes.Tool.show(g.id))">@g.title</a></li>
-    }
 
-</ul>
-}
+<div style='margin-left: 10px;'>
+
+
+
+    </div>
 
 <div style='margin-left: 10px;'>
 
@@ -39,7 +32,7 @@
         <br><br>
 
         <label for="tooltype">Category</label> <br>
-        <select name = "tooltype" id = "tooltype">
+        <select name = "tooltype_id" id = "tooltype">
             @for( t <- tooltypes) {
             <option value = "@t.id" > @t.name</option>
             }
@@ -50,14 +43,22 @@
         <label for="body">Description</label> <br>
         <textarea name="body" id="body" cols="30" rows="10"></textarea>
         <br>
-        <button>CREATE!</button>
+        <button>ADD</button>
         <br>
 
+        @if(gadgets.isEmpty()) {
+        <h2>No gadgets available</h2>
+        } else {
+        <h2>Gadget List</h2>
+        <ul>
+            @for(g <- gadgets) {
+            <li>@g.title</li>
+            }}
+        </ul>
 
-    </form>
 
 
-
+        </form>
 
 </div>
 

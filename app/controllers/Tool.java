@@ -69,8 +69,8 @@ public class Tool extends Controller {
 
 
 
-   // Route: GET /tools/:id
-   //   Shows the tool 'id'
+    //Route: GET /tools/:id
+    //  Shows the tool 'id'
     public Result show(Long id) {
         // Query the database for a tool with this id
         Gadget gadget = Gadget.find.byId(id);

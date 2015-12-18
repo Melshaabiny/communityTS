@@ -32,7 +32,6 @@ public class ToolTypes extends Controller {
         ToolType tooltype = ToolType.find.byId(id);
         if(tooltype == null) {
             return notFound("not found");
-
         } else {
             List<Gadget> gadgets = tooltype.gadgetList;
             return ok(views.html.tooltypes.show.render(tooltype, gadgets));
