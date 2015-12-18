@@ -1,15 +1,20 @@
 # --- Created by Ebean DDL
-# --- To stop Ebean DDL generation, remove this comment and start using Evolutions
+# To stop Ebean DDL generation, remove this comment and start using Evolutions
 
 # --- !Ups
+
+create table comment (
+  id                        bigserial not null,
+  body                      varchar(255),
+  comment                   bigint,
+  constraint pk_comment primary key (id))
+;
 
 create table gadget (
   id                        bigserial not null,
   title                     varchar(255),
   body                      varchar(255),
   rating                    bigint,
-  comment                   bigint,
-  category                  varchar(255),
   tooltype_id               bigint,
   constraint pk_gadget primary key (id))
 ;
@@ -34,6 +39,8 @@ create index ix_gadget_tooltype_1 on gadget (tooltype_id);
 
 
 # --- !Downs
+
+drop table if exists comment cascade;
 
 drop table if exists gadget cascade;
 

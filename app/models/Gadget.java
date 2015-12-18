@@ -6,19 +6,18 @@ import play.data.validation.Constraints;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.List;
 
 @Entity
 public class Gadget extends Model {
     @Id
     public Long id;
+    public String title;
+    public String body;
 
     @Constraints.Required
-    public String title;
-
-    public String body;
     public Long rating;
-    public Long comment;
-    public String category;
+    public List<Comment> comments;
 
     @ManyToOne
     public ToolType tooltype;

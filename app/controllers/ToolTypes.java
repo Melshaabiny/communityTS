@@ -5,7 +5,7 @@ import models.ToolType;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import play.mvc.*;
+
 import java.util.List;
 
 /**
@@ -20,7 +20,7 @@ public class ToolTypes extends Controller {
 
     }
 
-    @Security.Authenticated(SecAuth.class)
+   // @Security.Authenticated(SecAuth.class)
     public Result create() {
         ToolType tooltype = Form.form(ToolType.class).bindFromRequest().get();
         tooltype.save();

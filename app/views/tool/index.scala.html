@@ -2,8 +2,6 @@
 
 @(gadgets: List[Gadget], tooltypes: List[ToolType])
 
-<link rel="stylesheet" href="/assets/stylesheets/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/stylesheets/bootstrap/carousel.css">
 
 @main{
 @userauth.navbar()
@@ -25,14 +23,13 @@
 <h3>Tool List</h3>
 <ul>
     @for(g <- gadgets) {
-    <li>@g.title</li>
+    <li><a href="@(routes.Tool.show(g.id))">@g.title</a></li>
     }
 
 </ul>
 }
 
 <div style='margin-left: 10px;'>
-    <a href="@routes.Tool.index()">Index page</a>
 
     <h3>Add a new tool below</h3>
 
@@ -41,8 +38,8 @@
         <input type="text" name="title" />
         <br><br>
 
-        <label for="tooltype_id">Category</label> <br>
-        <select name = "tooltype_id" id = "tooltype">
+        <label for="tooltype">Category</label> <br>
+        <select name = "tooltype" id = "tooltype">
             @for( t <- tooltypes) {
             <option value = "@t.id" > @t.name</option>
             }
@@ -58,7 +55,13 @@
 
 
     </form>
+
+
+
+
 </div>
 
 
 }
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/stylesheets/bootstrap/carousel.css">

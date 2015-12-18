@@ -69,16 +69,16 @@ public class Tool extends Controller {
 
 
 
-    //Route: GET /tools/:id
-    //  Shows the tool 'id'
-//    public Result show(Long id) {
-//        // Query the database for a tool with this id
-//        Gadget gadget = Gadget.find.byId(id);
-//
-//        // If the article doesn't exist, then respond with a 404.
-//        if (gadget == null)
-//            return notFound("Not Found\n");
-//        else
-//            return ok(views.html.tool.show.render(gadget));
-//    }
+   // Route: GET /tools/:id
+   //   Shows the tool 'id'
+    public Result show(Long id) {
+        // Query the database for a tool with this id
+        Gadget gadget = Gadget.find.byId(id);
+
+        // If the article doesn't exist, then respond with a 404.
+        if (gadget == null)
+            return notFound("Not Found\n");
+        else
+            return ok(views.html.tool.show.render(gadget));
+    }
 }
