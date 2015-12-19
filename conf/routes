@@ -22,7 +22,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # tools
 GET     /tools                      controllers.Tool.index()
 POST    /tools                      controllers.Tool.create()
-# GET     /tools/:id                  controllers.Tool.show(id: Long)
+GET     /tools/:id                  controllers.Tool.show(id: Long)
 
 
 GET     /tooltypes                  controllers.ToolTypes.index()

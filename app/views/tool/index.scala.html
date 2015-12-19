@@ -17,7 +17,12 @@
 
 
 <div style='margin-left: 10px;'>
-
+    <h3>TOOL LIST</h3>
+    <ul>
+    @for(g <- gadgets) {
+    <li><a href="@(routes.Tool.show(g.id))">@g.title</a></li>
+    }
+    </ul>
 
 
     </div>
@@ -45,17 +50,6 @@
         <br>
         <button>ADD</button>
         <br>
-
-        @if(gadgets.isEmpty()) {
-        <h2>No gadgets available</h2>
-        } else {
-        <h2>Gadget List</h2>
-        <ul>
-            @for(g <- gadgets) {
-            <li>@g.title</li>
-            }}
-        </ul>
-
 
 
         </form>
